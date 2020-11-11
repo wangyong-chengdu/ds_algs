@@ -1,9 +1,10 @@
-#LRU缓存机制
-https://leetcode-cn.com/problems/lru-cache/
+# LRU缓存机制
+- https://leetcode-cn.com/problems/lru-cache/
 - 本质：双向链表结点的插入与删除
 - 解法：双向链表维护调用时间关系，用于实现LRU策略，Map实现KV缓存
+- 应用场景：操作系统页缓存淘汰策略。
 
-##解法
+## 解法
 - 思路：双向链表+Map的好处是查找元素很快，插入和删除可以做到o(1)，缺点是多了一个Map,且每个节点需要冗余头尾指针，因此空间利用率不高。
 - 时间复杂度：插入o(1),删除o(1)
 ```java
