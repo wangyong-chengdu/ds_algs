@@ -1,6 +1,6 @@
 # 复原IP地址
 - https://leetcode-cn.com/problems/restore-ip-addresses/
-- 本质: 树的深度遍历
+- 本质: 树的深度遍历 DFS(有回退，所以用回溯法)
 - 解法：回溯法遍历数组(树的深度优先遍历)
 - 应用场景：输入合法性判断、各种方案组合列举
 
