@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.字符串.q38_count_and_say;
+package cd.wangyong.leetcode.数据结构.数组.字符串.q38_count_and_say;
 
 import java.util.Stack;
 

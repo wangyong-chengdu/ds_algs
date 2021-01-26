@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.字符串.q151_reverse_words_in_a_string;
+package cd.wangyong.leetcode.数据结构.数组.字符串.q151_reverse_words_in_a_string;
 
 import java.util.Stack;
 

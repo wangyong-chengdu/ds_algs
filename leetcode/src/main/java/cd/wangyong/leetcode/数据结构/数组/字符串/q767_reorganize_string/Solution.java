@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.字符串.q767_reorganize_string;
+package cd.wangyong.leetcode.数据结构.数组.字符串.q767_reorganize_string;
 
 import java.util.Arrays;
 
