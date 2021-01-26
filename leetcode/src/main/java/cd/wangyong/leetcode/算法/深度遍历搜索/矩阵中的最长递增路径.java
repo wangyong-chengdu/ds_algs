@@ -1,14 +1,13 @@
-# 矩阵中的最长递增路径
-- https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/
-- 本质：矩阵遍历，深度遍历搜索
-- 算法：动态规划求最值
+package cd.wangyong.leetcode.算法.深度遍历搜索;
 
-## 解法-动态规划
-- 解题思路：
-- 时间复杂度：o(m * n), 空间复杂度:o(2 * m * n)
+import java.util.Arrays;
 
-```java
-public class Solution {
+/**
+ * @author andy
+ * @since 2021/1/25
+ */
+public class 矩阵中的最长递增路径 {
+
     public int longestIncreasingPath(int[][] matrix) {
         if (matrix == null || matrix.length == 0) return 0;
 
@@ -89,5 +88,3 @@ public class Solution {
         System.out.println(instance.longestIncreasingPath(matrix3));
     }
 }
-
-```
