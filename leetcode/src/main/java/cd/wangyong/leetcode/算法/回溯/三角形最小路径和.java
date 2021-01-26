@@ -1,15 +1,14 @@
-#  三角形最小路径和
-- https://leetcode-cn.com/problems/triangle/
-- 本质：数据遍历
-- 算法：回溯法，因为没有递推关系，因此目前看只能回溯
+package cd.wangyong.leetcode.算法.回溯;
 
-## 解法-回溯法
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
-- 时间复杂度：o(2 ^ (n - 1))
-- 空间复杂度：o(n)
-
-```java
-
+/**
+ * @author andy
+ * @since 2021/1/26
+ */
 public class 三角形最小路径和 {
 
     public int minimumTotal(List<List<Integer>> triangle) {
@@ -25,8 +24,8 @@ public class 三角形最小路径和 {
     public void backtrace(List<List<Integer>> triangle, LinkedList<Integer> trace, int i, int j, List<Integer> res) {
         int n = triangle.size();
 
+        int sum = trace.stream().mapToInt(Integer::intValue).sum();
         if (i >= n || j >= n) {
-            int sum = trace.stream().mapToInt(Integer::intValue).sum();
             if (sum < res.get(0)) {
                 res.remove(0);
                 res.add(sum);
@@ -58,9 +57,6 @@ public class 三角形最小路径和 {
         list.add(Arrays.asList(-10));
         return list;
     }
+
+
 }
-
-```
-
-
-
