@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode;
+package cd.wangyong.leetcode.common;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,29 +10,11 @@ import java.util.Queue;
 import java.util.stream.Collectors;
 
 /**
+ * 通用工具
  * @author andy
- * @since 2020/12/9
+ * @since 2021/2/2
  */
-public class 输入解析通用方法 {
-
-    static class TreeNode {
-        int index;
-        int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int index, int val) {
-            this.index = index;
-            this.val = val;
-        }
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        public ListNode(int val) {
-            this.val = val;
-        }
-    }
+public class Util {
 
     /**
      * 输入格式： [1,2,3,null,5,null,4]
@@ -43,6 +25,50 @@ public class 输入解析通用方法 {
         // 读取第一行数据
         String line = br.readLine().trim();
         return line.substring(1, line.length() - 1).split(",");
+    }
+
+
+    /**
+     * 读取输入，生成List
+     */
+    public static List<Integer> readString2List() throws IOException {
+        // 创建一个BufferedReader对象
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // 读取第一行数据
+        String line = br.readLine().trim();
+        return Arrays.stream(line.split("->")).map(Integer::valueOf).collect(Collectors.toList());
+    }
+
+    /**
+     * 读取输入，构建链表，返回头结点
+     */
+    public static ListNode buildList(List<Integer> inputs) {
+        if (inputs == null || inputs.size() == 0) return null;
+        ListNode head = new ListNode(inputs.get(0));
+        ListNode p = head, q;
+        for (int i = 1; i < inputs.size(); i++) {
+            q = new ListNode(inputs.get(i));
+            p.next = q;
+            p = q;
+        }
+        return head;
+    }
+
+    /**
+     * 打印单链表
+     */
+    public static void printList(ListNode head) {
+        StringBuilder sb = new StringBuilder();
+        while (head != null) {
+            sb.append(head.val).append("->");
+            head = head.next;
+        }
+        if (sb.length() == 0) {
+            System.out.println("");
+        }
+        else {
+            System.out.println(sb.substring(0, sb.length() - 2));
+        }
     }
 
     /**
@@ -77,48 +103,5 @@ public class 输入解析通用方法 {
     public static TreeNode buildNode(String[] array, int index) {
         if (array.length == 0 || index >= array.length || array[index].equals("null")) return null;
         return new TreeNode(index, Integer.parseInt(array[index]));
-    }
-
-    /**
-     * 读取输入，生成List
-     */
-    public static List<Integer> readString2List() throws IOException {
-        // 创建一个BufferedReader对象
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        // 读取第一行数据
-        String line = br.readLine().trim();
-        return Arrays.stream(line.split("->")).map(Integer::valueOf).collect(Collectors.toList());
-    }
-
-    /**
-     * 读取输入，构建List
-     */
-    public static ListNode buildList(List<Integer> inputs) {
-        if (inputs == null || inputs.size() == 0) return null;
-        ListNode head = new ListNode(inputs.get(0));
-        ListNode p = head, q;
-        for (int i = 1; i < inputs.size(); i++) {
-            q = new ListNode(inputs.get(i));
-            p.next = q;
-            p = q;
-        }
-        return head;
-    }
-
-    /**
-     * 打印单链表
-     */
-    public static void printList(ListNode head) {
-        StringBuilder sb = new StringBuilder();
-        while (head != null) {
-            sb.append(head.val).append("->");
-            head = head.next;
-        }
-        if (sb.length() == 0) {
-            System.out.println("");
-        }
-        else {
-            System.out.println(sb.substring(0, sb.length() - 2));
-        }
     }
 }

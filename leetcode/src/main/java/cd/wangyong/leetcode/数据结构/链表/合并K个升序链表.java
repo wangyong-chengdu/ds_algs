@@ -1,33 +1,27 @@
 package cd.wangyong.leetcode.数据结构.链表;
 
+import cd.wangyong.leetcode.common.ListNode;
+
 /**
+ * 递归归并思想求解
  * @author andy
  * @since 2020/11/14
  */
 public class 合并K个升序链表 {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {
-        }
-        ListNode(int val) {
-            this.val = val;
-        }
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    // 递归归并思想求解
+    /**
+     * 递归归并思想求解
+     */
     public ListNode mergeKLists(ListNode[] lists) {
         // 处理边界
         if (lists.length == 0) return null;
         return mergeLists(lists, 0, lists.length - 1);
     }
 
-    // 辅助函数
+
+    /**
+     * 递归归并求解
+     */
     private ListNode mergeLists(ListNode[] lists, int lo, int hi) {
         // 递归结束条件，分无可分
         if (hi <= lo) return lists[lo];
