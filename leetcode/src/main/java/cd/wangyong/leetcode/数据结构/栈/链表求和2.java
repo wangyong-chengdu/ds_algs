@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.链表;
+package cd.wangyong.leetcode.数据结构.栈;
 
 import java.util.Arrays;
 import java.util.Stack;

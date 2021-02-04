@@ -104,4 +104,15 @@ public class Util {
         if (array.length == 0 || index >= array.length || array[index].equals("null")) return null;
         return new TreeNode(index, Integer.parseInt(array[index]));
     }
+
+    /**
+     * 打印数组
+     */
+    public static void printArray(int[] array) {
+        StringBuilder sb = new StringBuilder("[");
+        for (int ele : array) sb.append(ele).append(",");
+        if (sb.length() > 1)sb.deleteCharAt(sb.length() - 1);
+        sb.append("]");
+        System.out.println(sb.toString());
+    }
 }

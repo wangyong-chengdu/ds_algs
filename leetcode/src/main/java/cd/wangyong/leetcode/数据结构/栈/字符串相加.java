@@ -1,16 +1,13 @@
-# 字符串相加
-- https://leetcode-cn.com/problems/add-strings/
-- 本质：字符串遍历
-- 解题思路：利用栈后进先出特点计算
+package cd.wangyong.leetcode.数据结构.栈;
 
-## 解法-栈
-- 思路：利用栈后进先出特点
-- 时间复杂度：o(n)
-- 空间复杂度：o(m + n)
+import java.util.Stack;
 
-```java
+/**
+ * @author andy
+ * @since 2021/2/4
+ */
+public class 字符串相加 {
 
-class Solution {
     public String addStrings(String num1, String num2) {
         Stack<Character> st1 = new Stack<>();
         Stack<Character> st2 = new Stack<>();
@@ -56,30 +53,3 @@ class Solution {
         return sb.toString();
     }
 }
-
-```
-
-## 解法2-空间优化
-
-```java
-class Solution {
-    public String addStrings(String num1, String num2) {
-        int i = num1.length() - 1, j = num2.length() - 1, add = 0;
-        StringBuffer ans = new StringBuffer();
-        while (i >= 0 || j >= 0 || add != 0) {
-            int x = i >= 0 ? num1.charAt(i) - '0' : 0;
-            int y = j >= 0 ? num2.charAt(j) - '0' : 0;
-            int result = x + y + add;
-            ans.append(result % 10);
-            add = result / 10;
-            i--;
-            j--;
-        }
-        // 计算完以后的答案需要翻转过来
-        ans.reverse();
-        return ans.toString();
-    }
-}
-```
-
-

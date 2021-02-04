@@ -18,7 +18,6 @@ public class 合并K个升序链表 {
         return mergeLists(lists, 0, lists.length - 1);
     }
 
-
     /**
      * 递归归并求解
      */
@@ -32,7 +31,9 @@ public class 合并K个升序链表 {
         return mergeTwoLists(left, right);
     }
 
-    // 归并两个链表
+    /**
+     * 归并两个链表
+     */
     private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // 边界情况
         if (l1 == null) return l2;
