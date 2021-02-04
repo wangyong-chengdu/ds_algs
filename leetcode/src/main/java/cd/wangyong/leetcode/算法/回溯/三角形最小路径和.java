@@ -33,12 +33,12 @@ public class 三角形最小路径和 {
             return;
         }
 
-        trace.add(triangle.get(i).get(j));
+        trace.add(triangle.get(i).get(j));// trace add
 
         backtrace(triangle, trace, i + 1, j, res);
         backtrace(triangle, trace, i + 1, j + 1, res);
 
-        trace.removeLast();
+        trace.removeLast(); // trace removeLast
     }
 
     public static void main(String[] args) {
