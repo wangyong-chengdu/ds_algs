@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.数组.二分查找.q_search_insert_position;
+package cd.wangyong.leetcode.数据结构.数组.二分法.q_search_insert_position;
 
 /**
  * @author wangyong

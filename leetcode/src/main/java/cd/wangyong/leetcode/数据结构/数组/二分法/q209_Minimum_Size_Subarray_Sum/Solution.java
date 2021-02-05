@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.数组.二分查找.q209_Minimum_Size_Subarray_Sum;
+package cd.wangyong.leetcode.数据结构.数组.二分法.q209_Minimum_Size_Subarray_Sum;
 
 /**
  * @author wangyong

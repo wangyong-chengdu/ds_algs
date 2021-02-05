@@ -1,4 +1,4 @@
-package cd.wangyong.leetcode.数据结构.数组.二分查找.q240;
+package cd.wangyong.leetcode.数据结构.数组.二分法.q240;
 
 /**
  * https://leetcode-cn.com/problems/search-a-2d-matrix-ii/?utm_source=LCUS&utm_medium=ip_redirect_q_uns&utm_campaign=transfer2china
