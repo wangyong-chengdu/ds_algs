@@ -1,36 +1,44 @@
-# 相交链表
-- https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
-- 本质：链表遍历
-- 解法：可复用链表是否有环解法
+package cd.wangyong.leetcode.数据结构.链表;
 
-## 解法
-- 思路：1.链接两个链表形成有环链表；2.寻找快慢指针相遇点；3.slow重新遍历再次相遇就是相交点；4.还原2个链表；
-- 时间复杂度：o（n）,空间复杂度：o（1）
+import cd.wangyong.leetcode.common.ListNode;
 
-```java
-public class Solution {
+/**
+ * @author andy
+ * @since 2021/2/8
+ */
+public class 相交链表 {
+
     /**
      * 链表相交点
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        // 边界处理
         if (headA == null || headB == null) return null;
+
+        // 遍历到链表a的尾部，将尾部连接到链表a的头部
         ListNode p = headA;
         while (p.next != null) p = p.next;
         p.next = headB;
-        
+
+        // 检查是否有有环，并返回相交点
         ListNode node = detectCycle(headA);
+
+        // 还原
         p.next = null;
         return node;
     }
-    
+
     /**
      * 链表有环判断
      */
     public ListNode detectCycle(ListNode head) {
         if (head == null) return null;
+
+        // 返回快慢指针相遇点
         ListNode intersect = getIntersect(head);
         if (intersect == null) return null;
-        
+
+        // 再重新跑一边，则slow再次与intersect相遇时就是相交点
         ListNode slow = head;
         while (slow != intersect) {
             slow = slow.next;
@@ -38,7 +46,7 @@ public class Solution {
         }
         return slow;
     }
-    
+
     /**
      * 快慢指针获取相交点
      */
@@ -52,6 +60,3 @@ public class Solution {
         return null;
     }
 }
-
-
-```
